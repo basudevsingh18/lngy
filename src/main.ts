@@ -5,7 +5,7 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
 import { provideRouter } from '@angular/router';
-import routeConfig from './app/routes';
+import { routes } from './app/app-routing.module';
 
 if (environment.production) {
   enableProdMode();
@@ -13,7 +13,7 @@ if (environment.production) {
 
 platformBrowserDynamic().bootstrapModule(AppModule,{
   providers: [
-    provideRouter(routeConfig)
+    provideRouter(routes)
   ]
 })
 .catch(err => console.error(err));
